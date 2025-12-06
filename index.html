@@ -11,6 +11,17 @@
 
     </head>
     <body>
+        <div class="snowflake" style="left: 5%; animation-delay: 0s;" >❄️</div>
+        <div class="snowflake" style="left: 15%; animation-delay: 1s;">❄️</div>
+        <div class="snowflake" style="left: 25%; animation-delay: 2s;">❄️</div>
+        <div class="snowflake" style="left: 35%; animation-delay: 1.8s;">❄️</div>
+        <div class="snowflake" style="left: 45%; animation-delay: 4s;">❄️</div>
+        <div class="snowflake" style="left: 55%; animation-delay: 3s;">❄️</div>
+        <div class="snowflake" style="left: 65%; animation-delay: 2.5s;">❄️</div>
+        <div class="snowflake" style="left: 75%; animation-delay: 1s;">❄️</div>
+        <div class="snowflake" style="left: 85%; animation-delay: 4.5s;">❄️</div>
+        <div class="snowflake" style="left: 95%; animation-delay: 2.5s;">❄️</div>
+
         <div class="page-container">
         <header>
             <h1>Welcome to a Christmas Landing Page</h1>
@@ -23,18 +34,32 @@
             </nav>
         </header>
         <main>
-
+            <!-- hero section -->
+            <section class="hero-section">
+                <h1>Countdown to Christmas!</h1>
+                <div class ="countdown-section">
+                    <div class="time-box">
+                    <span id="days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span> 
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span> 
+                    <span class="time-label">Seconds</span>
+                </div>
+                </div>
+            </section>
+           <!-- about section -->
             <section id="about" class="about-section">
                 <h2>About this Page</h2>
                 <p>This is a landing page where I get to practice my web development skills while creating fun Christmas creations!</p>
-            </section>
-            
-            <section id="countdown" class="countdown-section">
-                <div id="cntdwn"></div>
-        
-                <h2>Christmas Countdown!</h2>
-                <p>Countdown to Christmas with a festive timer!</p>
-                
             </section>
         </main>
         <footer>
@@ -42,6 +67,8 @@
         </footer>
 
         </div>
-        
+        <script src="scripts/main.js">
+            updateCountdown(); // Initial call to display immediately
+        </script>
     </body>
 </html>

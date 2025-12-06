@@ -2,7 +2,7 @@ header {
     background-color: #d93644;
     padding: 10px;
     text-align: center;
-    margin:auto;
+    margin-top: 20px;
     color: white;
     font-family: 'Cinzel', serif;
     margin: 0% 2%;
@@ -38,12 +38,79 @@ body {
     padding: 0 20px;
 }
 
+.hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #011f4b;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+.time-box {
+    text-align: center;
+}
+
+#days, #hours, #minutes, #seconds {
+    font-size: 4rem;
+    font-weight: bold;
+    display: block;
+}
+.time-label {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-section h1 {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 4rem;
+    color: #d93644;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    font-size: 1.5rem;
+    color: #fff;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration:7s;
+    animation-delay: 0s;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+
 .about-section h2 {
     text-align: center;
 
-}
-.countdown-section h2 {
-    text-align: center;
 }
 .comingsoon-section h2 {
     text-align: center;
