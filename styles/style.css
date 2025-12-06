@@ -1,8 +1,50 @@
 header {
     background-color: #d93644;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     margin:auto;
     color: white;
-    font-family: Quicksand, sans-serif;
+    font-family: 'Cinzel', serif;
+    margin: 0% 2%;
+}
+
+
+nav a {
+    color: white;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: large;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav a:hover {
+    transform: scale(1.25);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-section h2 {
+    text-align: center;
+
+}
+.countdown-section h2 {
+    text-align: center;
+}
+.comingsoon-section h2 {
+    text-align: center;
 }

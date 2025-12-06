@@ -6,23 +6,42 @@
         <title>My Landing Page</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="stylesheet" href="styles/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+
     </head>
     <body>
+        <div class="page-container">
         <header>
-            <h1>Welcome to a Funny Christmas Landing Page</h1>
+            <h1>Welcome to a Christmas Landing Page</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#cntdwn">Christmas Countdown</a></li>
+                    <li><a href="#comingsoon">Coming Soon</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
-            <section>
+
+            <section id="about" class="about-section">
                 <h2>About this Page</h2>
-                <p>This is a landing page where I get to practice my web development skills while creating funny Christmas creations!</p>
+                <p>This is a landing page where I get to practice my web development skills while creating fun Christmas creations!</p>
             </section>
-            <section>
-                <h2>Essential Christmas</h2>
-                <p>Check out these must-have Christmas items!</p>
+            
+            <section id="countdown" class="countdown-section">
+                <div id="cntdwn"></div>
+        
+                <h2>Christmas Countdown!</h2>
+                <p>Countdown to Christmas with a festive timer!</p>
+                
             </section>
         </main>
         <footer>
-            <p>&copy; 2025 My Funny Christmas Landing Page</p>
+            <p>&copy; 2025 My Christmas Landing Page</p>
         </footer>
+
+        </div>
+        
     </body>
 </html>
