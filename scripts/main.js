@@ -48,9 +48,38 @@ function showRandomJoke() {
  //Weather logic flow 
  // 1) get the user's zip code
  // 2) Build an API URL with zip, country code and API key. 
- // 3) Fetch the weather API forecast
+ // 3) create the action to fetch the weather API forecast
  // 4) loop through forecasts
- // 5) For each one, check if weather desc includes snow.
+ // 5) For each one, check if weather desc includes snow. ToLowerCase
  // 6) Build a function that if the weather mentions snow -> dispalay "Snow is in the Forecast"
  //    otherwise -> display "No Snow yet!"
 
+document.getElementById("check-weather-btn").addEventListener("click", function() {
+    const zip = document.getElementById("zip-input").value;
+    
+    if (zip !=="") {
+        const apiKey = "0d16b3b46c2a0cfc4a98b5b63d49dad2";
+        const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=imperial`;
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+             let description = data.weather[0].description;
+             let message = "The forecast says: " + description + ".";
+
+             if (description.includes("snow")) {
+                message += "☃️ A white Christmas could be coming!";
+
+             }else{
+                message += "🥶 No snow yet!"; 
+
+             }
+             document.getElementById("weather-result").textContent = message;
+        });
+
+    } else {
+        console.log('Please enter a zip code');    
+    }
+
+});
