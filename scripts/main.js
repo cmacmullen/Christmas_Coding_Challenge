@@ -43,3 +43,14 @@ function showRandomJoke() {
     const jokeButton = document.getElementById("joke-btn");
     jokeButton.addEventListener("click", showRandomJoke);
  });
+
+
+ //Weather logic flow 
+ // 1) get the user's zip code
+ // 2) Build an API URL with zip, country code and API key. 
+ // 3) Fetch the weather API forecast
+ // 4) loop through forecasts
+ // 5) For each one, check if weather desc includes snow.
+ // 6) Build a function that if the weather mentions snow -> dispalay "Snow is in the Forecast"
+ //    otherwise -> display "No Snow yet!"
+
