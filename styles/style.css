@@ -151,7 +151,7 @@ body {
 }
 #joke-btn {
     text-align: center;
-    background-color: #d93644;
+    background-color: whitesmoke;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -241,5 +241,63 @@ body {
     text-align: center;
     padding-top: 20px;
 }
+/*
+#about,
+#jokes,
+#weather {
+    background-color: #f7f7f7;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
 
+#about::before,
+#jokes::before,
+#weather::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/xmassTree.png);
+    background-repeat: repeat;
+    background-size: 30px;
+    opacity: .50;
+    pointer-events: none;
+    z-index: -1;
+
+}
+
+*/
+
+body {
+  background-image: url('../images/xmassTree.png');
+  background-repeat: repeat;
+  background-size: 50px;
+  background-color: #f7f7f7; /* snowy white */
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #a8cbb7;
+    opacity: .6;
+    z-index: -1;
+
+}
+
+.content-box {
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px (rgba 0, 0, 0, 0.1);
+    max-width: auto;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
 
