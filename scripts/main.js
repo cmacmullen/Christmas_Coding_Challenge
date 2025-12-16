@@ -59,27 +59,71 @@ document.getElementById("check-weather-btn").addEventListener("click", function(
     
     if (zip !=="") {
         const apiKey = "0d16b3b46c2a0cfc4a98b5b63d49dad2";
-        const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=imperial`;
+        const url = `https://api.openweathermap.org/data/2.5/forecast?zip=${zip}&appid=${apiKey}&units=imperial`;
+
     
     fetch(url)
-        .then(response => response.json())
+        .then(response =>{
+            if (!response.ok) {
+                throw new Error("Failed to fetch forecast");
+            }
+            return response.json();
+        })
         .then(data => {
-            console.log(data);
-             let description = data.weather[0].description;
-             let message = "The forecast says: " + description + ".";
+            console.log("Forecast Data", data);
 
-             if (description.includes("snow")) {
-                message += "☃️ A white Christmas could be coming!";
+            let snowInForecast = false;
+            let sampleDescription = [];
+            let snowTimes = [];
 
-             }else{
-                message += "🥶 No snow yet!"; 
+            for (let i =0; i< data.list.length; i++) {
+                const forecast =data.list[i];
+                const description =forecast.weather[0].description.toLowerCase();
 
-             }
-             document.getElementById("weather-result").textContent = message;
-        });
+                if (i < 5) {
+                    const date = new Date(forecast.dt_txt);
+                    sampleDescription.push(`${date.toLocaleDateString([], { weekday: 'short', hour: '2-digit', minute: '2-digit' })}: ${description}`);
+                }
+                
 
-    } else {
-        console.log('Please enter a zip code');    
-    }
+                if (description.includes("snow")) {
+                    snowInForecast = true;
+                    snowTimes.push(forecast.dt_txt);
+                }
+            }
+            let message = `<h3>Upcoming Daily Forecasts:</h3>`;
+            message += `<div class="forecast-list">`;
 
-});
+            sampleDescription.forEach(desc => {
+            message += `<p class="forecast-item">${desc}</p>`;
+            });
+
+            message += `</div>`;
+
+
+
+            if (snowInForecast) {
+                message += "A white Christmas could be coming!☃️ ";
+            }else{
+                message += "No snow in the forecast.🥶";
+            }
+            document.getElementById("weather-result").innerHTML = message;
+
+            })
+            .catch(error => {
+                console.error("Error fetching weather:", error);
+                document.getElementById("weather-result").textContent="Could not fetch weather. Please try again.";
+            });
+        }else{document.getElementById("weather-result").textContent = "Please enter a zip code.";
+
+        }
+    });
+
+            
+
+
+
+
+
+
+
