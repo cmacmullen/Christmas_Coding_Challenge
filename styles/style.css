@@ -307,7 +307,7 @@ body::before{
     border-radius: 12px;
     box-shadow: 0 4px 12px (rgba 0, 0, 0, 0.1);
     max-width: auto;
-    margin: 0 auto;
+    margin: 0 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
 }
