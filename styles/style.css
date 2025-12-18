@@ -341,5 +341,53 @@ body::before{
     font-family: 'Cinzel', serif;
 }
 
+.gift-section.section-spacing p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    padding-top: 20px;
+}
+.carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    scroll-behavior: smooth;
+    padding: 0;
+}
+.carousel-wheel {
+    display:flex;
+    gap: 20px;
+    scroll-behavior: smooth;
+}
+.carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 0;
+    background: none;
+}
+.carousel-item:hover {
+width: 100%;
+border-radius: 8px;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.carousel {
+    scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
 
 
