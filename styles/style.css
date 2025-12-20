@@ -350,7 +350,7 @@ body::before{
 .carousel {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    display: flex;
+    display: inline-flex;
     scroll-behavior: smooth;
     padding: 0;
 }
@@ -360,6 +360,9 @@ body::before{
     scroll-behavior: smooth;
 }
 .carousel-item {
+    display: flex;             /* flex, not inline-flex */
+    flex-direction: column;    /* stack children vertically */
+    align-items: center; 
     flex: 0 0 100%;
     scroll-snap-align: start;
     text-align: center;
@@ -387,6 +390,13 @@ border-radius: 8px;
 }
 .carousel::-webkit-scrollbar {
     display: none;
+}
+
+.carousel-item p {
+    display: block;
+    margin-top: 12px;
+    
+   
 }
 
 
