@@ -160,6 +160,9 @@ body {
     padding-top: 20px;
 
 }
+.joke-section h2{
+    margin-bottom: 20px;
+}
 #joke-btn {
     text-align: center;
     background-color: #d93644;
@@ -212,6 +215,9 @@ body {
 
 .weather-section.section-spacing {
   text-align: center;  
+}
+.weather-section h2{
+    margin-bottom: 20px;
 }
 
 #check-weather-btn {
@@ -347,57 +353,129 @@ body::before{
     text-align: center;
     padding-top: 20px;
 }
+/* ===== Carousel (1 item per screen, no extra gap) ===== */
+
 .carousel {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    display: inline-flex;
-    scroll-behavior: smooth;
-    padding: 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  /* optional: slight breathing room at edges */
+  padding: 0 10px;
+
+  /* hide scrollbar */
+  scrollbar-width: none; /* Firefox */
 }
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
 .carousel-wheel {
-    display:flex;
-    gap: 20px;
-    scroll-behavior: smooth;
+  display: flex;
+  /* IMPORTANT: no gap when slides are 100% width */
+  gap: 0;
 }
+
 .carousel-item {
-    display: flex;             /* flex, not inline-flex */
-    flex-direction: column;    /* stack children vertically */
-    align-items: center; 
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px 0;
-    background: none;
-}
-.carousel-item:hover {
-width: 100%;
-border-radius: 8px;
+  /* one slide takes the full viewport width of the carousel */
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+
+  /* stack image + caption */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* spacing INSIDE the slide (instead of gap between slides) */
+  padding: 0 20px 20px;
+
+  text-decoration: none;
+  color: inherit;
+
+  /* optional */
+  background: none;
+  border-radius: 10px;
 }
 
 .carousel-item img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
-.carousel {
-    scrollbar-width: none;
-}
-.carousel::-webkit-scrollbar {
-    display: none;
+  width: 100%;
+  max-width: 600px; /* keep images from getting huge on desktop */
+  height: 360px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
 }
 
 .carousel-item p {
-    display: block;
-    margin-top: 12px;
-    
-   
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
+/* Optional hover effect (don't change width on hover!) */
+.carousel-item:hover img {
+  transform: translateY(-1px);
+}
 
+.carousel-item img {
+  transition: transform 0.15s ease;
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  border: none;
+  background: none;
+  cursor: pointer;
+ 
+}
+.carousel-arrow::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+
+  border-top: 3px solid #999;
+  border-right: 3px solid #999;
+
+  display: block;
+}
+.carousel-arrow.prev::before {
+  transform: rotate(-135deg);
+}
+
+.carousel-arrow.next::before {
+  transform: rotate(45deg);
+}
+.carousel-arrow.prev {
+  left: 8px;
+}
+
+.carousel-arrow.next {
+  right: 8px;
+}
+.carousel-arrow:hover::before {
+  border-color: #666;
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.carousel-container {
+  position: relative;
+}
+
+.gift-section.section-spacing h2{
+    margin-bottom: 20px;
+}
 

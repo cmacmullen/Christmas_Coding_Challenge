@@ -119,7 +119,25 @@ document.getElementById("check-weather-btn").addEventListener("click", function(
         }
     });
 
-            
+
+  const carousel = document.querySelector("#gifts .carousel");
+  const prevBtn = document.querySelector("#gifts .carousel-arrow.prev");
+  const nextBtn = document.querySelector("#gifts .carousel-arrow.next");
+
+  // Safety checks (prevents errors if selectors don't match)
+  if (carousel && prevBtn && nextBtn) {
+    const scrollOne = (dir) => {
+      carousel.scrollBy({
+        left: dir * carousel.clientWidth,
+        behavior: "smooth",
+      });
+    };
+
+    prevBtn.addEventListener("click", () => scrollOne(-1));
+    nextBtn.addEventListener("click", () => scrollOne(1));
+  }
+
+         
 
 
 
